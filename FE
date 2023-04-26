@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Movie Reviews</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        .featured {
+            background-color: #f2f2f2;
+            padding: 20px;
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Movie Reviews</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="featured">
+            <h2>Featured Review</h2>
+            <article>
+                <h3>The Godfather</h3>
+                <img src="godfather.jpg" alt="The Godfather">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet erat euismod, iaculis nisl
+                    ac, facilisis enim. Sed et diam a felis vehicula faucibus. Sed varius ipsum sit amet lectus iaculis
+                    malesuada. Aliquam semper purus elit, vel finibus sapien luctus non. </p>
+                <button>Read More</button>
+            </article>
+        </section>
+
+        <section class="reviews">
+            <h2>Latest Reviews</h2>
+            <article>
+                <h3>The Dark Knight</h3>
+                <img src="darkknight.jpg" alt="The Dark Knight">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet erat euismod, iaculis nisl
+                    ac, facilisis enim. Sed et diam a felis vehicula faucibus. Sed varius ipsum sit amet lectus iaculis
+                    malesuada. Aliquam semper purus elit, vel finibus sapien luctus non. </p>
+                <button>Read More</button>
+            </article>
+
+            <article>
+                <h3>Forrest Gump</h3>
+                <img src="forrestgump.jpg" alt="Forrest Gump">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet erat euismod, iaculis nisl
+                    ac, facilisis enim. Sed et diam a felis vehicula faucibus. Sed varius ipsum sit amet lectus iaculis
+                    malesuada. Aliquam semper purus elit, vel finibus sapien luctus non. </p>
+                <button>Read More</button>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Movie Reviews</p>
+    </footer>
+    <script>
+        // Create an array of movie reviews
+        const reviews = [{ title: "The Godfather", image: "godfather.jpg", review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", rating: 9 }, { title: "The Dark Knight", image: "darkknight.jpg", review: "Sed et diam a felis vehicula faucibus.", rating: 8 }, { title: "Forrest Gump", image: "forrestgump.jpg", review: "Aliquam semper purus elit, vel finibus sapien luctus non.", rating: 7 }];
+
+        // Function to display the movie reviews
+        function displayReviews() {
+            const reviewsSection = document.querySelector(".reviews");
+            reviewsSection.innerHTML = "";
+
+            for (let i = 0; i < reviews.length; i++) {
+                const review = reviews[i];
+
+                const article = document.createElement("article");
+                article.innerHTML = `
+      <h3>${review.title}</h3>
+      <img src="${review.image}" alt="${review.title}">
+      <p>${review.review}</p>
+      <p>Rating: ${review.rating}</p>
+      <button>Read More</button>
+    `;
+
+                reviewsSection.appendChild(article);
+            }
+        }
+
+        // Call the displayReviews function to display the movie reviews
+        displayReviews();
+
+    </script>
+</body>
+
+</html>
